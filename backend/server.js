@@ -1,8 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const bodyParser = require("body-parser");
-const serverless = require("serverless-http");
 const connectDB = require("./config/db");
 
 // Load environment variables
@@ -12,8 +10,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cors());
 
 // Database connection
@@ -54,14 +51,6 @@ app.use((err, req, res, next) => {
 
 // Define port
 const PORT = process.env.PORT || 5000;
-
-// Only listen locally if not running in a serverless environment
-if (process.env.NODE_ENV !== "production" || !process.env.VERCEL) {
-  app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-  });
-}
-
-// Export for serverless (e.g., Vercel)
-module.exports = app;
-module.exports.handler = serverless(app);
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
