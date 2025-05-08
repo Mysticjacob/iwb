@@ -9,9 +9,14 @@ dotenv.config();
 // Initialize Express app
 const app = express();
 
+// ✅ CORS configuration — place this BEFORE route handlers
+app.use(cors({
+  origin: ["http://localhost:3000", "https://iwb-2213.vercel.app"],
+  credentials: true
+}));
+
 // Middleware
 app.use(express.json());
-app.use(cors());
 
 // Database connection
 connectDB();
@@ -49,7 +54,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Internal Server Error" });
 });
 
-// Define port
+// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
