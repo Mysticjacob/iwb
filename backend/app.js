@@ -41,7 +41,6 @@ app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/user", userRoutes); // ✅ NEW
 
-// Root route
 app.get("/", (req, res) => {
   res.send("Hello from the backend!");
 });
@@ -52,5 +51,5 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Internal Server Error" });
 });
 
-// Export serverless handler for deployment (serverless platforms like Vercel)
+// Export serverless handler for deployment
 module.exports.handler = serverless(app);
