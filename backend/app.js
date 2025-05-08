@@ -38,6 +38,9 @@ app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/user", userRoutes); // ✅ NEW
 
+app.get("/", (req, res) => {
+  res.send("Hello from the backend!");
+});
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
