@@ -1,0 +1,105 @@
+/* SalesDashboard.css */
+
+.sales-dashboard-container {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  h2, h3 {
+    text-align: left; /* ✅ Left-align headings */
+    color: #333;
+  }
+  
+  .sales-summary {
+    text-align: left; /* ✅ Left-align summary */
+    margin-bottom: 20px;
+  }
+  
+  .sales-summary p {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .add-btn {
+    padding: 10px;
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .add-btn:hover {
+    background-color: #218838;
+  }
+  
+  .table-container {
+    margin-top: 20px;
+    text-align: left; /* ✅ Align the table to the left */
+  }
+  
+  .products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left; /* ✅ Align table content to the left */
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left; /* ✅ Left-align table text */
+  }
+  
+  th {
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    text-align: left; /* ✅ Left-align headers */
+  }
+  
+  .product-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  
+  .delete-btn {
+    padding: 8px 12px;
+    background-color: #dc3545; /* Red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+  
